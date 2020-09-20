@@ -1,0 +1,17 @@
+<div class="card-header">
+  <a class="card-link task-title" (click)="cardExpand = !cardExpand">
+    {{task.title}}
+  </a>
+</div>
+<div *ngIf="cardExpand">
+  <div class="card-body">
+    <span class="task-details-title">Description : </span>
+    <p class="task-description">
+      {{task.description}}
+    </p>
+    <span class="task-details-title">Due Date : </span>
+    <span class="task-due-date">
+      {{task.dueDate}}
+    </span>
+  </div>
+</div>

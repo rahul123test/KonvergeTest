@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+/* ------ Model Style -------- */
+.modal .modal-header{
+    background-color :#172b4d;
+    color:#fff;
+}
+.modal-header .close{
+    color: #fff;;
+}
+.modal .modal-footer{
+    background-color :#172b4d;
+}
+/* ------- Error Message -------- */
+.error-msg{
+    font-size: 15px;
+    color: red;
+}

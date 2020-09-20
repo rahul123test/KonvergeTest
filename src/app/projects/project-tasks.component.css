@@ -1,0 +1,37 @@
+#projects-taks{
+    background-image: url(../../assets/images/task-bg.jpg);
+    padding: 16px 0 50px 0;
+}
+#projects-taks h1{
+    font-size: 25px;
+    text-align: center;
+    color: #fff;
+}
+#projects-taks .tasks-wrap{
+    background-color: #ccc;
+    padding: 15px 10px;
+    border-radius: 6px;
+    opacity: 0.9;
+    margin-bottom: 15px;
+}
+#projects-taks .tasks-status{
+    font-weight: 500;
+    color: #6e138c;
+    display: block;
+}
+#projects-taks .create-tasks{
+    background-color :#172b4d;
+    padding: 10px 0;
+    text-align: center;
+    margin: 20px 0;
+    opacity: 0.9;
+}
+#projects-taks .card{
+    margin-top:10px;
+}
+#acceptance .card{
+    background-color: green;
+}
+#acceptance a.card-link.task-title{
+    color: #fff !important;
+}

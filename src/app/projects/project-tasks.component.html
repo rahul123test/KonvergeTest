@@ -1,0 +1,72 @@
+<section id="projects-taks">
+  <h1>Project Management</h1>
+  <div class="create-tasks">
+    <a href="#exampleModalLong" class="btn btn-success" data-toggle="modal" [class.disabled]="max_tasks > 5">Add Task</a>
+  </div>
+  <div class="container-fluid">
+    <div class="tasks-wrapper">
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <div class="tasks-wrap">
+            <span class="error-msg">{{max_tasks_status}}</span>
+            <span class="tasks-status">Backlogs</span>
+            <div id="backlogs" (drop)="dropTask($event)" (dragover)="allowDropTask($event)">
+              <div class="card" *ngFor="let task of tasksList" id="{{'drag' + task.taskId}}" draggable="true" (dragstart)="dragTask($event)">
+                <app-project-task-card [task]="task"></app-project-task-card>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="tasks-wrap" id="development" (drop)="dropTask($event)" (dragover)="allowDropTask($event)">
+            <span class="tasks-status">Development</span>
+            
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="tasks-wrap" id="code-review" (drop)="dropTask($event)" (dragover)="allowDropTask($event)">
+            <span class="tasks-status">Code Review</span>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="tasks-wrap" id="acceptance" (drop)="dropTask($event)" (dragover)="allowDropTask($event)">
+            <span class="tasks-status">Acceptance</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-------- Modal ------------->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Add New Task</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #taskForm="ngForm">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title" [(ngModel)]="task.title" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea name="description" id="description" [(ngModel)]="task.description" class="form-control"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="dueDate">Due Date</label>
+            <input type="date" name="dueDate" id="dueDate" [(ngModel)]="task.dueDate" class="form-control">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" (click)="addTask()" class="btn btn-primary">Add Task</button>
+        <button type="button" class="btn btn-secondary flote-right" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

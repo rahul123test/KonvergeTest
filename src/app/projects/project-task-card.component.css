@@ -1,0 +1,19 @@
+.task-title{
+    color: #6e138c;
+    font-size: 16px;
+    font-weight: 600;
+    display: block;
+}
+span.task-details-title {
+    font-size: 19px;
+    font-weight: 500;
+    color: #6e138c;
+}
+#acceptance .task-title{
+    color:#fff !important;
+}
+p.task-description,span.task-due-date{
+    font-size: 16px;
+    font-weight: 500;
+    color: #908e9c;
+}
